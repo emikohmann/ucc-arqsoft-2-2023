@@ -45,5 +45,6 @@ func SearchFlights(ctx context.Context) domain.SearchResult {
 				Price:        300000,
 			},
 		},
+		RequestID: ctx.Value("request_id").(string),
 	}
 }
