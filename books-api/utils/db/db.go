@@ -11,14 +11,14 @@ import (
 var MongoDb *mongo.Database
 var client *mongo.Client
 
-func Disconect_db() {
+func DisconnectDB() {
 
 	client.Disconnect(context.TODO())
 }
 
-func Init_db() error {
+func InitDB() error {
 
-	clientOpts := options.Client().ApplyURI("mongodb://root:root@localhost:27017/?authSource=admin&authMechanism=SCRAM-SHA-256")
+	clientOpts := options.Client().ApplyURI("mongodb://localhost:27017")
 	cli, err := mongo.Connect(context.TODO(), clientOpts)
 	client = cli
 	if err != nil {
@@ -32,7 +32,7 @@ func Init_db() error {
 
 	MongoDb = client.Database("test")
 
-	fmt.Println("Available datatabases:")
+	fmt.Println("Available databases:")
 	fmt.Println(dbNames)
 
 	return nil

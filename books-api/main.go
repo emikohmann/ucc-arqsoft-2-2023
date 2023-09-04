@@ -14,8 +14,8 @@ var (
 func main() {
 	ginRouter = gin.Default()
 	router.MapUrls(ginRouter)
-	err := db.Init_db()
-	defer db.Disconect_db()
+	err := db.InitDB()
+	defer db.DisconnectDB()
 
 	if err != nil {
 		fmt.Println("Cannot init db")
