@@ -5,6 +5,7 @@ import (
 	"books-api/dtos"
 	model "books-api/models"
 	e "books-api/utils/errors"
+	"time"
 )
 
 type bookService struct{}
@@ -24,6 +25,8 @@ func init() {
 }
 
 func (s *bookService) GetBook(id string) (dtos.BookDto, e.ApiError) {
+
+	time.Sleep(15 * time.Second)
 
 	var book model.Book = bookDao.GetById(id)
 	var bookDto dtos.BookDto
