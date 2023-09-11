@@ -1,6 +1,7 @@
 package main
 
 import (
+	"books-api/cache"
 	"books-api/router"
 	"books-api/utils/db"
 	"fmt"
@@ -14,6 +15,7 @@ var (
 func main() {
 	ginRouter = gin.Default()
 	router.MapUrls(ginRouter)
+	cache.InitCache()
 	err := db.InitDB()
 	defer db.DisconnectDB()
 

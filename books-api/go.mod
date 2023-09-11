@@ -3,6 +3,7 @@ module books-api
 go 1.20
 
 require (
+	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
 	github.com/gin-gonic/gin v1.9.1
 	github.com/json-iterator/go v1.1.12
 	go.mongodb.org/mongo-driver v1.12.1
